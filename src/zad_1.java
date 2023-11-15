@@ -9,14 +9,14 @@ public class zad_1 extends JFrame {
     private JTextField textfield;
     private JPanel panel;
     private Map<String, Color> kolory;
+
     public void zad_1(){
         SwingUtilities.invokeLater(() -> program_1()); {//obsluga przez jeden wątek - wątek EDTprogram_1();
         }
     }
     private void program_1(){
-        JFrame frame = new JFrame();
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        frame.setSize(400, 350);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setSize(400, 350);
 
         kolory = new HashMap<>();
         kolory.put("czerwony", Color.RED);
@@ -39,9 +39,9 @@ public class zad_1 extends JFrame {
         panel.add(textfield);//textarea to tutaj wpisujemy
         panel.add(button);
 
-        frame.setLocationRelativeTo(null);
-        frame.add(panel);
-        frame.setVisible(true);
+        setLocationRelativeTo(null);
+        add(panel);
+        setVisible(true);
     }
     private void oblsuga_buttona(){
         button.addActionListener(e -> {//metoda obslugujaca klikniecie w button

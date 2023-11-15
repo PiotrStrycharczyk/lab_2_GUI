@@ -12,7 +12,6 @@ public class zad_3 extends JFrame implements ActionListener{//klasa implementuje
     // onListener, czyli klasa dostarcza implementacje wszystkich metod zawartych w tym
     // interfejsie
 
-    private JFrame frame;
     private JPanel panel_listy_zakupow_i_usuwania_itemu;
     private JPanel panel_wpisania_i_dodania_itemu;
     private JTextField textField;
@@ -28,7 +27,6 @@ public class zad_3 extends JFrame implements ActionListener{//klasa implementuje
         Dimension preferredSizeNapisuListaZakupow = new Dimension(250,20);
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS)); // Ustawienie BoxLayout w kierunku pionowym
-        frame = new JFrame();
         wymienione_zakupy = new JLabel();
         JPanel panel_napis_lzakupow = new JPanel();
         panel_wpisania_i_dodania_itemu = new JPanel();
@@ -58,21 +56,21 @@ public class zad_3 extends JFrame implements ActionListener{//klasa implementuje
         panel_listy_zakupow_i_usuwania_itemu.add(wymienione_zakupy);
         przycisk_dodania_itemu.addActionListener(this);//obsluga zdarzenia dla przycisku
 
-        frame.setSize(300,700);
+        setSize(300,700);
 
         //mainPanel.add(panel_dodania_produktow);
         mainPanel.add(panel_wpisania_i_dodania_itemu);
         mainPanel.add(panel_napis_lzakupow);
         mainPanel.add(panel_listy_zakupow_i_usuwania_itemu);
 
-        frame.add(mainPanel);
+        add(mainPanel);
 
 
         //frame.setLayout(null);ta linjka sprawia że trzeba recznie ustawiac wszystkie elementy (niezalecane)
         //frame.setLayout(null);
-        frame.setLocationRelativeTo(null);//daje na stodek frame
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        frame.setVisible(true);
+        setLocationRelativeTo(null);//daje na stodek frame
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setVisible(true);
     }
 
 
@@ -119,8 +117,8 @@ public class zad_3 extends JFrame implements ActionListener{//klasa implementuje
 
             panel_listy_zakupow_i_usuwania_itemu.add(itemPanel);
         }
-        frame.revalidate();
-        frame.repaint();
+        revalidate();
+        repaint();
     }
 }
 

@@ -4,8 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
 
-public class zad_2 extends Frame {
-    private JFrame frame;
+public class zad_2 extends JFrame {
     private JTextArea miejsce_na_tekst;
     private JFileChooser fileChooser;
     private JButton button_nowy;
@@ -45,13 +44,12 @@ public class zad_2 extends Frame {
         menu.add(menuItemZamknij);
         menuBar.add(menu);
 
-        frame.setJMenuBar(menuBar); // Set the menu bar to the frame
+        setJMenuBar(menuBar); // Set the menu bar to the frame
     }
     public void zad_2(){
         SwingUtilities.invokeLater(() -> init_zad_2());
     }
     private void wyglad_okienka() {
-        frame = new JFrame();
         JPanel panel1 = new JPanel();
         JLabel napis_notatnik = new JLabel("aplikacja notatnika");
         JLabel napis_menu = new JLabel("Menu:");
@@ -125,12 +123,12 @@ public class zad_2 extends Frame {
 
         napis_menu.setFont(new Font("Source Code Pro", Font.BOLD, 15));
 
-        frame.setLayout(new GridLayout(1, 1)); // Ustawienie GridLayout na ramce
-        frame.setSize(400, 600);
-        frame.setLocationRelativeTo(null); // Ramka na środku ekranu
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        frame.setVisible(true);
-        frame.add(panel1);
+        setLayout(new GridLayout(1, 1)); // Ustawienie GridLayout na ramce
+        setSize(400, 600);
+        setLocationRelativeTo(null); // Ramka na środku ekranu
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setVisible(true);
+        add(panel1);
     }
 
     private void obsluga_button_nowy(){
@@ -173,7 +171,7 @@ public class zad_2 extends Frame {
         }
     }
     private void obsluga_button_zamknij(){
-        frame.dispose();
+        dispose();
     }
 
     private void obslugow_przyciskow(){

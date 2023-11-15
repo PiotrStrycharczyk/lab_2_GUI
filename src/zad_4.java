@@ -2,12 +2,11 @@ import javax.swing.*;
 import javax.swing.JFrame;
 import java.awt.*;
 import javax.swing.JLabel;
-public class zad_4 extends Frame {
+public class zad_4 extends JFrame {
     private JComboBox combo_jednostki_wejsciowe;
     private JComboBox combo_jednostki_wyjsciowe;
     private JPanel panel_1;
     private JTextField wprowadzane_dane;
-    private JFrame frame;
     JLabel zapisanie_wynikow;
     public void zad_4(){
         SwingUtilities.invokeLater(this::wyglad_okienka);//inaczej wyglad_okienk()
@@ -28,7 +27,6 @@ public class zad_4 extends Frame {
         JPanel main_panel = new JPanel();
         panel_1 = new JPanel();
         JPanel panel_2 = new JPanel();
-        frame = new JFrame();
         main_panel.add(napis_konwerter);
         main_panel.add(napis_co_przeliczyc);
 
@@ -42,11 +40,11 @@ public class zad_4 extends Frame {
 
         main_panel.setLayout(new GridLayout(7, 2, 20, 20));
 
-        frame.setSize(600, 450);
-        frame.setLocationRelativeTo(null);
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        frame.add(main_panel);
-        frame.setVisible(true);
+        setSize(600, 450);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        add(main_panel);
+        setVisible(true);
         button_oblicz.addActionListener(e -> przeliczJednostki());//wyrazenie lambda
     }
     private void przeliczJednostki() {
@@ -64,8 +62,8 @@ public class zad_4 extends Frame {
         } catch (NumberFormatException ex) {
             zapisanie_wynikow.setText("Błędna wartość wejściowa!");
             panel_1.add(zapisanie_wynikow);
-            frame.repaint();
-            frame.revalidate();
+            repaint();
+            revalidate();
             return;
         }
 
@@ -88,13 +86,13 @@ public class zad_4 extends Frame {
             if (wynik != -1) {
                 zapisanie_wynikow.setText("Wynik: " + wynik);
                 panel_1.add(zapisanie_wynikow);
-                frame.repaint();
-                frame.revalidate();
+                repaint();
+                revalidate();
             } else {
                 zapisanie_wynikow.setText("Niepoprawne jednostki!");
                 panel_1.add(zapisanie_wynikow);
-                frame.repaint();
-                frame.revalidate();
+                repaint();
+                revalidate();
             }
         }
     }

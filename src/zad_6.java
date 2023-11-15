@@ -18,8 +18,6 @@ public class zad_6 extends JFrame implements ActionListener {
         JLabel napis_podaj_wzrost = new JLabel("Podaj wzrost w m: ");
         bmiLabel = new JLabel();
 
-
-        JFrame frame = new JFrame();
         panel1 = new JPanel();//to jest mainPanel
         JPanel panel2 = new JPanel();
         JPanel panel3 = new JPanel();
@@ -47,13 +45,13 @@ public class zad_6 extends JFrame implements ActionListener {
         panel1.add(przycisk_oblicz);
         panel1.add(bmiLabel);
 
-        frame.add(panel1);
+        add(panel1);
 
-        frame.setSize(450,350);
+        setSize(450,350);
         //rame.setLayout(null);ta linjka sprawia że trzeba recznie ustawiac wszystkie elementy (niezalecane)
-        frame.setLocationRelativeTo(null);//daje na stodek frame
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        frame.setVisible(true);
+        setLocationRelativeTo(null);//daje na stodek frame
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setVisible(true);
 
     }
 
